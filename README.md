@@ -1,4 +1,7 @@
  # Jump_Rings
 
 Hello JumpRings is a small game Being made by me, feel free to use the code for your own use.
-Engine Unity/ language CS/ ECS Unsused.
+Engine Unity/ language CS/ ECS Unsused/ Modeling Blender.
+
+https://unity3d.com/unity
+https://www.blender.org/
