@@ -39,9 +39,14 @@ public class Player_Movment : MonoBehaviour
     public bool k_check;
     //Check if player is pressing h
     [SerializeField]
-    [Header("is pressing h")]
+    [Header("Is pressing j?")]
     [Tooltip("If player is pressing j then the bool will return true")]
     public bool j_Check;
+    //Checks if the player is pressing h
+    [SerializeField]
+    [Header("Is pressing h?")]
+    [Tooltip("If player is pressing h then the bool will return true")]
+    public bool h_check; 
     #endregion
     #region FixedUpdateMethod
 
@@ -63,23 +68,23 @@ public class Player_Movment : MonoBehaviour
             Space_Check = false;
         }
         #endregion
-        #region if j logic
-        //If player is pressing m then the code withing will run
+        #region if k logic
+        //If player is pressing k then the code withing will run
         if (Input.GetKey("k")){
             k_check = true;
             RB.AddForce(0, 0, iHorizontal_Movment * Time.deltaTime * 7);
             
             
 
-            }//If it is not true that the player is pressing m the the code within will run
+            }//If it is not true that the player is pressing k the the code within will run
             else{
 
             k_check = false;
 
             }
         #endregion
-        #region if h logic
-        // If the player presses h the code within will run
+        #region if j logic
+        // If the player presses j the code within will run
         if (Input.GetKey("j")){
 
             RB.AddForce(0, Vertical_Movment * Time.deltaTime * .5f, 0);
@@ -87,11 +92,24 @@ public class Player_Movment : MonoBehaviour
 
         }
         else{
-
+            //if it is not true that the player is pressing j j_check will return false
             j_Check = false;
 
         }
-#endregion
+        #region if h logic
+        if (Input.GetKey("h")){
+            h_check = true;
+            RB.AddForce(0, 0, -Horizontal_Movment * Time.deltaTime * 3);
+
+        }
+        else{
+
+            h_check = false;
+
+        }
+
+        #endregion
+        #endregion
     }
     #endregion
 }
