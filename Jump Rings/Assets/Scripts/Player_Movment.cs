@@ -48,8 +48,7 @@ public class Player_Movment : MonoBehaviour
             Space_Check = true;
             RB.AddForce(0, Vertical_Movment * Time.deltaTime, -Horizontal_Movment * Time.deltaTime);
         }
-        else
-        {
+        else{
 
             RB.AddForce(0, -4000 * Time.deltaTime, 0);
             Space_Check = false;
