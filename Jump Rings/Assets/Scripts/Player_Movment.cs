@@ -32,8 +32,11 @@ public class Player_Movment : MonoBehaviour
     [Header("Is pressing space bar?")]
     [Tooltip("Will return true if the player presses space")]
     public bool Space_Check;
-        
-
+    //Checks if player is pressing m
+    [SerializeField]
+    [Header("Is pressing m?")]
+    [Tooltip("If player is pressing m then the bool will return true")]
+    public bool m_check;   
     #endregion
     #region FixedUpdateMethod
 
@@ -44,16 +47,27 @@ public class Player_Movment : MonoBehaviour
         transform.rotation = Random.rotation;
         //Checks if the player presses space, if this is so the code within will run
         if (Input.GetKey("space")){
-
+            //Adds force to player based on the argument. Space_Check = true
             Space_Check = true;
             RB.AddForce(0, Vertical_Movment * Time.deltaTime, -Horizontal_Movment * Time.deltaTime);
         }
         else{
-
+            //Adds force to player based on the argument. m_Check = true
             RB.AddForce(0, -4000 * Time.deltaTime, 0);
             Space_Check = false;
-        }
+        }//If player is pressing m then the code withing will run
+        if (Input.GetKey("m")){
+            m_check = true;
+            RB.AddForce(0, 0, iHorizontal_Movment * Time.deltaTime * 7);
+            
+            
 
+            }//If it is not true that the player is pressing m the the code within will run
+            else{
+
+            m_check = false;
+
+            }
         }
         
     }
