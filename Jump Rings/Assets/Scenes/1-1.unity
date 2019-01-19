@@ -445,5 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RB: {fileID: 1066355017}
-  Vertical_Movment: 5800
-  Horizontal_Movment: 8500
+  Vertical_Movment: 5967
+  Horizontal_Movment: 10000
+  iHorizontal_Movment: 3166
+  Space_Check: 0
