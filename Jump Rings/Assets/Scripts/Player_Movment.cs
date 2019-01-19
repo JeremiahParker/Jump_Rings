@@ -32,11 +32,16 @@ public class Player_Movment : MonoBehaviour
     [Header("Is pressing space bar?")]
     [Tooltip("Will return true if the player presses space")]
     public bool Space_Check;
-    //Checks if player is pressing m
+    //Checks if player is pressing a
     [SerializeField]
-    [Header("Is pressing m?")]
-    [Tooltip("If player is pressing m then the bool will return true")]
-    public bool m_check;   
+    [Header("Is pressing k?")]
+    [Tooltip("If player is pressing k then the bool will return true")]
+    public bool k_check;
+    //Check if player is pressing h
+    [SerializeField]
+    [Header("is pressing h")]
+    [Tooltip("If player is pressing j then the bool will return true")]
+    public bool j_Check;
     #endregion
     #region FixedUpdateMethod
 
@@ -45,6 +50,7 @@ public class Player_Movment : MonoBehaviour
         RB.AddForce(0, 0, iHorizontal_Movment * Time.deltaTime);
         //Randomly rotates player
         transform.rotation = Random.rotation;
+        #region if Space logic
         //Checks if the player presses space, if this is so the code within will run
         if (Input.GetKey("space")){
             //Adds force to player based on the argument. Space_Check = true
@@ -55,9 +61,12 @@ public class Player_Movment : MonoBehaviour
             //Adds force to player based on the argument. m_Check = true
             RB.AddForce(0, -4000 * Time.deltaTime, 0);
             Space_Check = false;
-        }//If player is pressing m then the code withing will run
-        if (Input.GetKey("m")){
-            m_check = true;
+        }
+        #endregion
+        #region if j logic
+        //If player is pressing m then the code withing will run
+        if (Input.GetKey("k")){
+            k_check = true;
             RB.AddForce(0, 0, iHorizontal_Movment * Time.deltaTime * 7);
             
             
@@ -65,12 +74,27 @@ public class Player_Movment : MonoBehaviour
             }//If it is not true that the player is pressing m the the code within will run
             else{
 
-            m_check = false;
+            k_check = false;
 
             }
+        #endregion
+        #region if h logic
+        // If the player presses h the code within will run
+        if (Input.GetKey("j")){
+
+            RB.AddForce(0, Vertical_Movment * Time.deltaTime * .5f, 0);
+            j_Check = true;
+
         }
-        
+        else{
+
+            j_Check = false;
+
+        }
+#endregion
     }
     #endregion
-    
+}
+
+
 
