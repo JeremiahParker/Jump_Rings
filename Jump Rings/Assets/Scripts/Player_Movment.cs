@@ -29,6 +29,7 @@ public class Player_Movment : MonoBehaviour
     [Range(0f, 10000f)]
     public float iHorizontal_Movment;
     //Checks if the player is pressing space
+    [SerializeField]
     [Header("Is pressing space bar?")]
     [Tooltip("Will return true if the player presses space")]
     public bool Space_Check;
@@ -87,7 +88,7 @@ public class Player_Movment : MonoBehaviour
         // If the player presses j the code within will run
         if (Input.GetKey("j")){
 
-            RB.AddForce(0, Vertical_Movment * Time.deltaTime * .5f, 0);
+            RB.AddForce(0, Vertical_Movment * Time.deltaTime * 2f, 0);
             j_Check = true;
 
         }
